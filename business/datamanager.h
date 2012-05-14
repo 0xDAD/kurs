@@ -25,16 +25,21 @@ public:
 		using boost::serialization::make_nvp;
 		ifstream ifs;
 		ifs.open(file.c_str(), std::ios::in);
-		boost::archive::xml_iarchive xmlp(ifs);
-		xmlp >> make_nvp(title.c_str(), list);
+		if (ifs.good()){			
+			boost::archive::xml_iarchive xmlp(ifs);
+			xmlp >> make_nvp(title.c_str(), list);
+		}
 	}
 	template <class Tlist>
 	void _saveData(std::string file, std::string title, Tlist& list){
 		using boost::serialization::make_nvp;
 		ofstream ofs;
 		ofs.open(file.c_str(), std::ios::out);
-		boost::archive::xml_oarchive xml(ofs);
-		xml << make_nvp(title.c_str(), list);
+		if (ofs.good())
+		{
+			boost::archive::xml_oarchive xml(ofs);
+			xml << make_nvp(title.c_str(), list);
+		}
 	}
 	bool load(std::string  base_path){
 		_loadData(base_path + "/patients.xml", "patients", LOP);
@@ -55,16 +60,6 @@ private:
 	datamanager(){}
 	static datamanager ginst;
 	friend class boost::serialization::access;
-
-	/*template<class archive>
-	void serialize(archive& ar, const unsigned int version)
-	{
-		using boost::serialization::make_nvp;
-		ar & make_nvp("patients", LOP);
-		ar & make_nvp("doctors", LOD);
-		ar & make_nvp("cards", m_loc);
-		ar & make_nvp("specializations", m_los);
-	}*/
 
 	bool find_spec_doc (int spec_id, list<doctor>& spec_doc)
 	{
