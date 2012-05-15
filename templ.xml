@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<messages>
+	<message id="main-templ">
+		<div style="position:relative;width:100%;margin-top:0px;margin-bottom:0px;">
+			<div class ="header"> ${head-ph} </div>
+			
+			<div class ="hist">${hist-ph}</div>
+			<hr/>
+			<div class ="page"> ${page-ph}</div>
+			<div class ="footer"> ${foot-ph}</div>
+		</div>
+
+	</message>
+	<message id="page-templ">
+
+		<p>Choose speciality</p>
+		<div>${sel-box}</div>
+	</message>
+
+	<message id="choose-spec-templ">
+
+		<p>Choose speciality:</p>
+		<div>${sel-box}</div>
+	</message>
+
+</messages>

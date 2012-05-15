@@ -23,5 +23,9 @@ public:
 	{
 		return m_title;
 	}
+	int id() const
+	{
+		return m_spec_id;
+	}
 
 };

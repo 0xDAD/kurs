@@ -38,6 +38,7 @@ private:
 		ifs.open(file.c_str(), std::ios::in);
 		if (ifs.good()){			
 			boost::archive::xml_iarchive xmlp(ifs);
+			
 			xmlp >> make_nvp(title.c_str(), list);
 		}
 	}
@@ -113,6 +114,7 @@ public:
 };
 
 datamanager datamanager::m_sinstance;
+
 datamanager& GetDM(){
 	return datamanager::getInstance();
 }
