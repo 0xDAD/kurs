@@ -1,17 +1,20 @@
 #pragma once
 #include <Wt/WApplication>
-#include <Wt/WStackedWidget>
 #include "business/datamanager.h"
-using namespace Wt;
+#include "WMainPage.h"
 
+using namespace Wt;
 class MyApplication : public WApplication
 {
 public:
-	MyApplication(const WEnvironment& env):WApplication(env){}
-
+	MyApplication(const WEnvironment& env):WApplication(env), m_wmain(NULL){
+	
+	}
+	void createMainWidget(){
+		if(!m_wmain)
+			m_wmain = new WMainPage(this->root());
+	}
 	void handle(const std::string & str);
-	void SetMainStack(WStackedWidget* _stack);
-
-private:
-	WStackedWidget* m_stack;
+private:	
+	WMainPage* m_wmain;
 };

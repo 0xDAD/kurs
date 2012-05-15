@@ -1,10 +1,10 @@
 #pragma once
-#include "MyApplication.h"
-#include <Wt/WContainerWidget>
 #include <Wt/WLink>
 #include <Wt/WAnchor>
+#include "WPageBase.h"
+using namespace Wt;
 
-class WChoiseWidget : public Wt::WContainerWidget 
+class WChoiseWidget : public WPageBase
 {
 public:
 	WChoiseWidget(){
