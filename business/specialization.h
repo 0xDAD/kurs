@@ -1,12 +1,12 @@
 #pragma once
 using namespace std;
 
-class specialization{
+class spec{
 	string m_title;
 	int m_spec_id;
 public:
-	specialization(){}
-	specialization(string& title, int id):m_title(title),m_spec_id(id){}
+	spec(){}
+	spec(string& title, int id):m_title(title),m_spec_id(id){}
 
 private:
 
@@ -18,4 +18,10 @@ private:
 		ar & make_nvp("Title", m_title);
         ar & make_nvp("SpecID", m_spec_id);
 	}
+public:
+	const std::string& title() const
+	{
+		return m_title;
+	}
+
 };

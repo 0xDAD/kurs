@@ -13,15 +13,26 @@ using namespace std;
 class datamanager
 {
 public:
-	static datamanager& GetInstance(){
-		return ginst;
+	static datamanager& getInstance(){
+		return m_sinstance;
 	}	
-	list<patient> LOP;
-	list<doctor> LOD;
-	list<card> m_loc;
-	list<specialization> m_los;
+	bool load(std::string  base_path){
+		loadData(base_path + "/patients.xml", "patients", m_listPatients);
+		loadData(base_path + "/doctors.xml", "doctors", m_listDoctors);
+		loadData(base_path + "/cards.xml", "cards", m_listCards);
+		loadData(base_path + "/specs.xml", "specs", m_listSpecs);
+		return true;
+	}
+	bool save(std::string base_path){
+		saveData(base_path + "/patients.xml", "patients", m_listPatients);
+		saveData(base_path + "/doctors.xml", "doctors", m_listDoctors);
+		saveData(base_path + "/cards.xml", "cards", m_listCards);
+		saveData(base_path + "/specs.xml", "specs", m_listSpecs);
+		return true;
+	}
+private:
 	template <class Tlist>
-	void _loadData(std::string file, std::string title, Tlist& list){
+	void loadData(std::string file, std::string title, Tlist& list){
 		using boost::serialization::make_nvp;
 		ifstream ifs;
 		ifs.open(file.c_str(), std::ios::in);
@@ -31,7 +42,7 @@ public:
 		}
 	}
 	template <class Tlist>
-	void _saveData(std::string file, std::string title, Tlist& list){
+	void saveData(std::string file, std::string title, Tlist& list){
 		using boost::serialization::make_nvp;
 		ofstream ofs;
 		ofs.open(file.c_str(), std::ios::out);
@@ -41,30 +52,22 @@ public:
 			xml << make_nvp(title.c_str(), list);
 		}
 	}
-	bool load(std::string  base_path){
-		_loadData(base_path + "/patients.xml", "patients", LOP);
-		_loadData(base_path + "/doctors.xml", "doctors", LOD);
-		_loadData(base_path + "/cards.xml", "cards", m_loc);
-		_loadData(base_path + "/specs.xml", "specs", m_los);
-		return true;
-	}
-
-	bool save(std::string base_path){
-		_saveData(base_path + "/patients.xml", "patients", LOP);
-		_saveData(base_path + "/doctors.xml", "doctors", LOD);
-		_saveData(base_path + "/cards.xml", "cards", m_loc);
-		_saveData(base_path + "/specs.xml", "specs", m_los);
-		return true;
-	}
 private:
 	datamanager(){}
-	static datamanager ginst;
+	static datamanager m_sinstance;
 	friend class boost::serialization::access;
 
+private:
+	list<patient> m_listPatients;
+	list<doctor> m_listDoctors;
+	list<card> m_listCards;
+	list<spec> m_listSpecs;
+
+public:	
 	bool find_spec_doc (int spec_id, list<doctor>& spec_doc)
 	{
 		list<doctor>::iterator i;
-		for(i = LOD.begin(); i!=LOD.end(); i++)
+		for(i = m_listDoctors.begin(); i!=m_listDoctors.end(); i++)
 		{
 			if(i->get_sid() == spec_id)
 				spec_doc.push_back(*i);
@@ -77,7 +80,7 @@ private:
 	bool find_doc_wt (int doc_id, list<card>& free_card)
 	{
 		list<card>::iterator i;
-		for(i = m_loc.begin(); i!=m_loc.end(); i++)
+		for(i = m_listCards.begin(); i!=m_listCards.end(); i++)
 			if(i->get_did() == doc_id && !i->get_pid())
 				free_card.push_back(*i);
 
@@ -90,13 +93,26 @@ private:
 	void appointment (int card_id, int pat_id)
 	{
 		list<card>::iterator i;
-		for(i = m_loc.begin(); i!=m_loc.end(); i++)
+		for(i = m_listCards.begin(); i!=m_listCards.end(); i++)
 			if(i->get_cid() == card_id && !i->get_pid())
 				i->set_pid(pat_id);
 	}
+
+	const list<patient>& patients() const{
+		return m_listPatients;
+	}
+	const list<doctor>& doctors() const{
+		return m_listDoctors;
+	}
+	const list<card>& cards() const{
+		return m_listCards;
+	}
+	const list<spec>& specs() const{
+		return m_listSpecs;
+	}
 };
 
-datamanager datamanager::ginst;
+datamanager datamanager::m_sinstance;
 datamanager& GetDM(){
-	return datamanager::GetInstance();
+	return datamanager::getInstance();
 }

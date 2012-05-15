@@ -2,12 +2,17 @@
 <!DOCTYPE boost_serialization>
 <boost_serialization signature="serialization::archive" version="9">
 <specs class_id="0" tracking_level="0" version="0">
-	<count>1</count>
+	<count>2</count>
 	<item_version>0</item_version>
 	<item class_id="1" tracking_level="0" version="0">
-		<Title>lor</Title>
+		<Title>Lor</Title>
 		<SpecID>1</SpecID>
 	</item>
+	<item>
+		<Title>Кардиолог</Title>
+		<SpecID>2</SpecID>
+	</item>
+
 </specs>
 </boost_serialization>
 
