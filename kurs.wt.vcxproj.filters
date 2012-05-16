@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="App">
+      <UniqueIdentifier>{3ac931a3-5d52-4fab-a7e7-53cc1c8e3079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Business">
+      <UniqueIdentifier>{80b49857-da43-41fa-841f-0b993a2e48cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{cd43a3a2-c83d-4c64-9538-f972ef99f471}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyApplication.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="business\card.h">
+      <Filter>Business</Filter>
+    </ClInclude>
+    <ClInclude Include="business\datamanager.h">
+      <Filter>Business</Filter>
+    </ClInclude>
+    <ClInclude Include="business\doctor.h">
+      <Filter>Business</Filter>
+    </ClInclude>
+    <ClInclude Include="business\patient.h">
+      <Filter>Business</Filter>
+    </ClInclude>
+    <ClInclude Include="business\specialization.h">
+      <Filter>Business</Filter>
+    </ClInclude>
+    <ClInclude Include="WChoisePage.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="WSpecsPage.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="WPageBase.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="WMainPage.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="helper.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="WDocsPage.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="utf8conv_inl.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="utf8conv.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="WDateWidget.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="WCardCalendar.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MyApplication.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
