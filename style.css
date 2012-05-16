@@ -1,5 +1,6 @@
 hr{
 	width:570px;
+	height:1px;
 	color:blue;
 }
 div.header {
@@ -29,4 +30,119 @@ div.footer{
 	width:560px;	
 	margin:auto;
 	height:110px;
+	text-align:right;
 }
+/*
+ * WCalendar
+ */
+.Wt-cal {
+    padding: 0px;
+}
+
+.Wt-cal table {
+    border-left: 1px solid #727D9C;
+    font: normal 13px/22px "Trebuchet MS", Verdana, Arial, Helvetica,
+      sans-serif;
+    color: #515B66;
+    text-align: center;
+    background-color: #fff;
+    border-collapse: separate;
+}
+
+.Wt-cal table td {
+    text-align: center;
+}
+
+.Wt-cal table.d1 {
+    width: 155px;
+}
+
+.Wt-cal table.d1 td {
+    width: 20px;
+}
+
+.Wt-cal table.d3 {
+    width: 220px;
+}
+
+.Wt-cal table.d3 td {
+    width: 30px;
+}
+
+.Wt-cal table.dlong {
+    width: 490px;
+}
+
+.Wt-cal table.dlong td {
+    width: 70px;
+}
+
+.Wt-cal caption {
+    margin: 0;
+    padding: 0;
+    background: #6880A0 url(title-gradient.png) repeat-x scroll 0 -20px;
+    color: #fff;
+    font: bold 13px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.Wt-cal-navbutton {
+    cursor: pointer; cursor: hand;
+    font: bold 20px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    vertical-align: middle;
+}
+
+.Wt-cal caption select {
+    cursor: pointer; cursor: hand;
+    font: 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    margin: 2px 0px;
+    vertical-align: middle;
+}
+
+.Wt-cal-year {
+    vertical-align: middle;
+}
+
+.Wt-cal-year span {
+    padding: 1px 2px;
+}
+
+.Wt-cal-year span:hover {
+    color: #6880A0;
+    background-color: #F0F0F0;
+}
+
+.Wt-cal th {
+    font: bold 12px/22px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    color: #515B66;
+    background: #D9E2E1;
+    border-right: 1px solid #6880A0;
+    border-bottom: 1px solid #6880A0;
+    border-top: 1px solid #6880A0;
+    cursor: default;
+}
+
+.Wt-cal td {
+    border-right: 1px solid #6880A0;
+    border-bottom: 1px solid #6880A0;
+    text-align: center;
+    cursor: default;
+}
+
+.Wt-cal-oom {
+    color: #CCCCCC;
+}
+
+.Wt-cal-oor {
+    color: #CCCCCC;
+}
+
+.Wt-cal-sel {
+    background-color:#FFF19F;
+}
+
+.Wt-cal-now {
+    color: #F6F4DA;
+    font-weight: bold;
+    background: #AAAAAA;
+} 

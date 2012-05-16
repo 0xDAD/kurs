@@ -1,9 +1,7 @@
 #pragma once
-#include <boost/archive/xml_oarchive.hpp>
-#include <boost/archive/xml_iarchive.hpp>
 #include <boost/serialization/list.hpp>
 #include <boost/serialization/nvp.hpp>
-
+using namespace Wt;
 class patient
 {
 protected: 
@@ -23,7 +21,7 @@ private:
 	int m_age;
 	int m_sex;
 	std::string m_phone;
-
+	
 private:
 	friend class boost::serialization::access;
 	template<class archive>

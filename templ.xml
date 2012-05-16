@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <messages>
+	<message id = "title">Поликлиника</message>
 	<message id="main-templ">
 		<div style="position:relative;width:100%;margin-top:0px;margin-bottom:0px;">
 			<div class ="header"> ${head-ph} </div>
@@ -7,20 +8,40 @@
 			<div class ="hist">${hist-ph}</div>
 			<hr/>
 			<div class ="page"> ${page-ph}</div>
+			<hr/>
 			<div class ="footer"> ${foot-ph}</div>
 		</div>
 
 	</message>
+	<message id="choise-templ">
+<div>		
+		${link1-ph}<br/>
+		${link2-ph}<br/>
+</div>
+	</message>
+<message id="link1">Создать талон</message>
+<message id="link2">Изменить талон</message>
+
 	<message id="page-templ">
 
-		<p>Choose speciality</p>
+		<p>-</p>
 		<div>${sel-box}</div>
 	</message>
 
 	<message id="choose-spec-templ">
 
-		<p>Choose speciality:</p>
+		<p>Выберите специальность:</p>
 		<div>${sel-box}</div>
+	</message>
+
+	<message id="choose-doc-templ">
+
+		<p>Выберите Вашего лечащего врача:</p>
+		<div>${sel-box}</div>
+	</message>
+	<message id="choose-date-templ">
+		<p>Выберите дату приема:</p>
+		<div>${cal-ph}</div>
 	</message>
 
 </messages>

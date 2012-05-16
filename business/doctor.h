@@ -1,17 +1,24 @@
 #pragma once
-#include <boost/archive/xml_oarchive.hpp>
-#include <boost/archive/xml_iarchive.hpp>
 #include <boost/serialization/list.hpp>
 #include <boost/serialization/nvp.hpp>
 
 class doctor
 {
 protected: 
-	doctor(){}
 public:
 	doctor(int id, std::string& FIO, std::string& phone, int sid):d_id(id), d_FIO(FIO), d_phone(phone), m_spec_id(sid){}
-	int get_sid()
+	doctor(){}
+
+	int sid()const
 	{return m_spec_id;}
+	int id ()const
+	{
+		return d_id;
+	}
+	std::string name() const{
+		return d_FIO;
+		return "";
+	}
 private:
 	int d_id;
 	std::string d_FIO;
@@ -29,4 +36,5 @@ private:
 		ar & make_nvp("phone", d_phone);
 		ar & make_nvp("spec", m_spec_id);
     }
+
 };

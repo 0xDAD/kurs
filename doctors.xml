@@ -2,307 +2,43 @@
 <!DOCTYPE boost_serialization>
 <boost_serialization signature="serialization::archive" version="9">
 <doctors class_id="0" tracking_level="0" version="0">
-	<count>50</count>
+	<count>6</count>
 	<item_version>0</item_version>
 	<item class_id="1" tracking_level="0" version="0">
 		<id>1</id>
-		<name>Ivanov Ivan Ivanovi4</name>
+		<name>Ivanov Ivan Ivanovich</name>
 		<phone>802974362482</phone>
 		<spec>1</spec>
 	</item>
 	<item>
 		<id>2</id>
-		<name>Ivanov Ivan Ivanovi4</name>
+		<name>Petrov Petr Petrovich</name>
 		<phone>802974362482</phone>
 		<spec>1</spec>
 	</item>
 	<item>
 		<id>3</id>
-		<name>Ivanov Ivan Ivanovi4</name>
+		<name>Sidorov Sidor Sidorovich</name>
 		<phone>802974362482</phone>
 		<spec>1</spec>
 	</item>
 	<item>
 		<id>4</id>
-		<name>Ivanov Ivan Ivanovi4</name>
+		<name>Veselyj Petr Petrovich</name>
 		<phone>802974362482</phone>
-		<spec>1</spec>
+		<spec>2</spec>
 	</item>
 	<item>
 		<id>5</id>
-		<name>Ivanov Ivan Ivanovi4</name>
+		<name>Grustnyj Pavel Nikolaevich</name>
 		<phone>802974362482</phone>
-		<spec>1</spec>
+		<spec>2</spec>
 	</item>
 	<item>
 		<id>6</id>
-		<name>Ivanov Ivan Ivanovi4</name>
+		<name>Krasivaja Tatsiana Mikhailovna</name>
 		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>7</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>8</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>9</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>10</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>11</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>12</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>13</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>14</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>15</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>16</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>17</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>18</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>19</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>20</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>21</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>22</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>23</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>24</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>25</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>26</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>27</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>28</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>29</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>30</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>31</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>32</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>33</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>34</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>35</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>36</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>37</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>38</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>39</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>40</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>41</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>42</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>43</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>44</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>45</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>46</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>47</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>48</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>49</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
-	</item>
-	<item>
-		<id>50</id>
-		<name>Ivanov Ivan Ivanovi4</name>
-		<phone>802974362482</phone>
-		<spec>1</spec>
+		<spec>2</spec>
 	</item>
 </doctors>
 </boost_serialization>

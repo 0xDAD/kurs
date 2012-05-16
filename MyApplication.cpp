@@ -1,23 +1,31 @@
 #include "MyApplication.h"
 #include <errno.h>
+#include "helper.h"
+#include "utf8conv.h"
 
 using namespace Wt;
-
+using namespace utf8util; 
 WApplication *createApplication(const WEnvironment& env)
-{
+{	
 	MyApplication* app = new MyApplication(env);
+	app->setCssTheme("polished");
 	app->messageResourceBundle().use(app->appRoot() + "templ");
+	app->setTitle(WWidget::tr("title"));
 	app->useStyleSheet("style.css");
 	app->internalPathChanged().connect(app, &MyApplication::handle);	
-	app->createMainWidget();	
+	app->createMainWidget();
+	
 	return app;
 }
 
 void MyApplication::handle( const std::string & str )
 {		
 		int idx = atol(str.c_str() + 1);
+		
 		if(errno != EINVAL){
-			m_wmain->makeTransition(idx, 0);
+			map<string, boost::any> params;
+			makeparams(str, params);
+			m_wmain->makeTransition(idx, params);
 		}
 		//if(idx == 100){
 		//	specialization spec(std::string("lor"), 1);
@@ -37,7 +45,8 @@ void MyApplication::handle( const std::string & str )
 
 int main(int argc, char **argv)
 {
-  GetDM().load(".");
+ // GetDM().load(".");
+	 GetDM().load(".");
   return WRun(argc, argv, &createApplication);
-  GetDM().save(".");
+ // GetDM().save(".");
 }

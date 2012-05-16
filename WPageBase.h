@@ -1,20 +1,24 @@
 #pragma once
 #include "MyApplication.h"
 #include <Wt/WContainerWidget>
-
+#include "helper.h"
+using namespace std;
 class WPageBase : public Wt::WContainerWidget 
 {
 public:
-	WPageBase():m_pageData(0){
+	WPageBase(){
 	}
-	int getPageData(){
-		return m_pageData;
+
+	void setPageParams(map<string, boost::any>& params){
+		m_params = params;
+		update();
 	}
-	void setPageData(int nData){
-		m_pageData = nData;
+
+	virtual string getNextLink(){
+		return makeparurl(m_params, m_snextbase);
 	}
-	//virtual void nextPage() = 0;
-//	virtual void prevPage() = 0;
+	virtual void update(){}
 	protected:
-	int m_pageData;
+	map<string, boost::any> m_params;
+	string m_snextbase;
 };

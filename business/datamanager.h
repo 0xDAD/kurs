@@ -4,8 +4,9 @@
 #include "card.h"
 #include "specialization.h"
 #include <fstream>
-#include <boost/archive/xml_oarchive.hpp>
-#include <boost/archive/xml_iarchive.hpp>
+//#include <wfstream>
+#include <boost/archive/xml_woarchive.hpp>
+#include <boost/archive/xml_wiarchive.hpp>
 #include <boost/serialization/list.hpp>
 #include <boost/serialization/nvp.hpp>
 
@@ -30,7 +31,43 @@ public:
 		saveData(base_path + "/specs.xml", "specs", m_listSpecs);
 		return true;
 	}
+//	bool load(std::wstring  base_path){
+//		loadData(base_path + L"/patients.xml",	"patients", m_listPatients);
+//		loadData(base_path + L"/doctors.xml",	"doctors", m_listDoctors);
+////		loadData(base_path + L"/cards.xml",		"cards", m_listCards);
+////		loadData(base_path + L"/specs.xml",		"specs", m_listSpecs);
+//		return true;
+//	}
+//	bool save(std::wstring base_path){
+//		saveData(base_path + L"/patients.xml", "patients", m_listPatients);
+//		saveData(base_path + L"/doctors.xml",  "doctors", m_listDoctors);
+//		saveData(base_path + L"/cards.xml",	   "cards", m_listCards);
+//		saveData(base_path + L"/specs.xml",	   "specs", m_listSpecs);
+//		return true;
+//	}
 private:
+	//template <class Tlist>
+	//void loadData(std::wstring file, std::string title, Tlist& list){
+	//	using boost::serialization::make_nvp;
+	//	wifstream ifs;
+	//	ifs.open(file.c_str(), std::ios::in);
+	//	if (ifs.good()){			
+	//		boost::archive::xml_wiarchive xmlp(ifs);
+
+	//		xmlp >> make_nvp(title.c_str(), list);
+	//	}
+	//}
+	//template <class Tlist>
+	//void saveData(std::wstring file, std::string title, Tlist& list){
+	//	using boost::serialization::make_nvp;
+	//	wofstream ofs;
+	//	ofs.open(file.c_str(), std::ios::out);
+	//	if (ofs.good())
+	//	{
+	//		boost::archive::xml_woarchive xml(ofs);
+	//		xml << make_nvp(title.c_str(), list);
+	//	}
+	//}
 	template <class Tlist>
 	void loadData(std::string file, std::string title, Tlist& list){
 		using boost::serialization::make_nvp;
@@ -70,7 +107,7 @@ public:
 		list<doctor>::iterator i;
 		for(i = m_listDoctors.begin(); i!=m_listDoctors.end(); i++)
 		{
-			if(i->get_sid() == spec_id)
+			if(!spec_id || i->sid() == spec_id)
 				spec_doc.push_back(*i);
 		}
 		if(spec_doc.size())
