@@ -45,13 +45,34 @@ div.footer{
       sans-serif;
     color: #515B66;
     text-align: center;
-    background-color: #fff;
+    background-color: #000;
     border-collapse: separate;
 }
 
 .Wt-cal table td {
     text-align: center;
 }
+.Wt-cal table td .avail {
+    background-color: #0a0;
+    color: #000;
+    text-align: center;
+}
+
+.Wt-cal table td .forbid {
+    background-color: #555;
+    text-align: center;
+}
+
+.Wt-cal table td .unavail {
+    background-color: #a00;
+    text-align: center;
+}	
+
+.Wt-cal table td .nicm {
+    background-color: #100;
+    text-align: center;
+}	
+
 
 .Wt-cal table.d1 {
     width: 155px;
@@ -138,7 +159,7 @@ div.footer{
 }
 
 .Wt-cal-sel {
-    background-color:#FFF19F;
+    background-color: #FFF19F !important;
 }
 
 .Wt-cal-now {

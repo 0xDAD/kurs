@@ -297,8 +297,6 @@
     <ClInclude Include="business\doctor.h" />
     <ClInclude Include="business\patient.h" />
     <ClInclude Include="business\specialization.h" />
-    <ClInclude Include="utf8conv.h" />
-    <ClInclude Include="utf8conv_inl.h" />
     <ClInclude Include="WCardCalendar.h" />
     <ClInclude Include="WDateWidget.h" />
     <ClInclude Include="WChoisePage.h" />
@@ -306,6 +304,7 @@
     <ClInclude Include="WMainPage.h" />
     <ClInclude Include="WPageBase.h" />
     <ClInclude Include="WSpecsPage.h" />
+    <ClInclude Include="WTimeChoise.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CMakeLists.txt" />

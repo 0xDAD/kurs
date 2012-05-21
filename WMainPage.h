@@ -13,6 +13,7 @@
 #include "WDocsPage.h"
 #include "WSpecsPage.h"
 #include "WDateWidget.h"
+#include "WTimeChoise.h"
 using namespace std;
 class WMainPage : public Wt::WContainerWidget 
 {
@@ -37,11 +38,13 @@ public:
 		WDocsWidget* _docs = new WDocsWidget();
 		WContainerWidget* _wempt = new WContainerWidget();
 		WDateWidget* _wdate = new WDateWidget();
+		WTimeWidget* _wtime = new WTimeWidget();
 		m_stack->addWidget(_choise);
 		m_stack->addWidget(_specs);
 		m_stack->addWidget(_wempt); //CARDS WIDGET
 		m_stack->addWidget(_docs);
 		m_stack->addWidget(_wdate);
+		m_stack->addWidget(_wtime);
 		//FOOTER
 		WContainerWidget* footer = new WContainerWidget();
 		m_next = new WPushButton("Next", footer);

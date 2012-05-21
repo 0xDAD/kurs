@@ -48,16 +48,13 @@
     <ClInclude Include="WDocsPage.h">
       <Filter>UI</Filter>
     </ClInclude>
-    <ClInclude Include="utf8conv_inl.h">
-      <Filter>App</Filter>
-    </ClInclude>
-    <ClInclude Include="utf8conv.h">
-      <Filter>App</Filter>
-    </ClInclude>
     <ClInclude Include="WDateWidget.h">
       <Filter>UI</Filter>
     </ClInclude>
     <ClInclude Include="WCardCalendar.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="WTimeChoise.h">
       <Filter>UI</Filter>
     </ClInclude>
   </ItemGroup>

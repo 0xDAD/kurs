@@ -1,10 +1,10 @@
 #include "MyApplication.h"
 #include <errno.h>
 #include "helper.h"
-#include "utf8conv.h"
+
 
 using namespace Wt;
-using namespace utf8util; 
+
 WApplication *createApplication(const WEnvironment& env)
 {	
 	MyApplication* app = new MyApplication(env);
