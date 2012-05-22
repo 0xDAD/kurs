@@ -57,6 +57,12 @@
     <ClInclude Include="WTimeChoise.h">
       <Filter>UI</Filter>
     </ClInclude>
+    <ClInclude Include="WNewPatientWidget.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="WCardView.h">
+      <Filter>UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CMakeLists.txt" />

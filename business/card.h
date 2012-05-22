@@ -17,10 +17,15 @@ class card{
 public:
 	card(){};
 	card(int id, int pid, int did,/*, boost::gregorian::date date, */ptime stime/*, boost::posix_time::ptime etime*/, int duration):m_card_id(id), m_p_id(pid), m_d_id(did)/*, m_date(date)*/, m_stime(stime),/* m_etime(etime)*/ m_duration(duration){}
-	int get_did(){return m_d_id;}
-	int get_pid(){return m_p_id;}
+	int id()const{return m_card_id;}
+	int get_did()const{return m_d_id;}
+	int get_pid()const{return m_p_id;}
 	void set_pid(int pid){m_p_id = pid;}
-	int get_cid(){return m_card_id;}
+
+	boost::posix_time::ptime get_dt() const{
+		return m_stime;
+	}
+
 	private:
 	friend class boost::serialization::access;
 	template<class Archive>

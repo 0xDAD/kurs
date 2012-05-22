@@ -14,6 +14,8 @@
 #include "WSpecsPage.h"
 #include "WDateWidget.h"
 #include "WTimeChoise.h"
+#include "WNewPatientWidget.h"
+#include "WCardView.h"
 using namespace std;
 class WMainPage : public Wt::WContainerWidget 
 {
@@ -28,9 +30,11 @@ public:
 		area->setToolTip("Home");
 		area->setLink(_link);
 		image->addArea(area);	
+
 		//HIST
 		m_hist = new WText();
 		m_hist->setText("Select option");
+
 		//BODY
 		m_stack = new WStackedWidget();
 		WSpecsWidget* _specs = new WSpecsWidget();
@@ -39,17 +43,24 @@ public:
 		WContainerWidget* _wempt = new WContainerWidget();
 		WDateWidget* _wdate = new WDateWidget();
 		WTimeWidget* _wtime = new WTimeWidget();
+		WNewPatientWidget* _newpat = new WNewPatientWidget();
+		WCardView* _card = new WCardView();
+
 		m_stack->addWidget(_choise);
 		m_stack->addWidget(_specs);
 		m_stack->addWidget(_wempt); //CARDS WIDGET
 		m_stack->addWidget(_docs);
 		m_stack->addWidget(_wdate);
 		m_stack->addWidget(_wtime);
+		m_stack->addWidget(_newpat);
+		m_stack->addWidget(_card);
+
 		//FOOTER
 		WContainerWidget* footer = new WContainerWidget();
 		m_next = new WPushButton("Next", footer);
 		m_next->clicked().connect(this, &WMainPage::nextClicked);
 		m_next->disable();
+
 		temp->bindWidget("head-ph", image);
 		temp->bindWidget("hist-ph", m_hist);
 		temp->bindWidget("page-ph", m_stack);
@@ -70,14 +81,14 @@ public:
 	}
 	void nextClicked(const WMouseEvent& evt){
 		WPageBase* _widget = static_cast<WPageBase*>(m_stack->currentWidget());
-		if (_widget && !_widget->getNextLink().empty()){			
+		if (_widget && !_widget->getNextBase().empty()){			
 			WApplication::instance()->setInternalPath(_widget->getNextLink(), true);			
 		}
 	}
 	void updatePage() 
 	{
 		WPageBase* _widget = static_cast<WPageBase*>(m_stack->currentWidget());
-		if (_widget && !_widget->getNextLink().empty()){			
+		if (_widget && !_widget->getNextBase().empty()){			
 			m_next->enable();
 		}else
 			m_next->disable();

@@ -21,7 +21,13 @@ private:
 	int m_age;
 	int m_sex;
 	std::string m_phone;
-	
+public:
+	int id() const	{
+		return m_id;
+	}
+	std::string pass() const{
+		return m_pass;
+	}
 private:
 	friend class boost::serialization::access;
 	template<class archive>
@@ -29,6 +35,7 @@ private:
     {
         using boost::serialization::make_nvp;
 		ar & make_nvp("ID", m_id);
+		ar & make_nvp("Pass", m_pass);
         ar & make_nvp("Name", m_name);
         ar & make_nvp("Age", m_age);
 		ar & make_nvp("Sex", m_sex);

@@ -12,7 +12,7 @@ class WDocsWidget : public WPageBase
 public: 
 	void onComboChanged(int nItem){				
 		int id = m_ids[nItem];
-		m_params["pid"] = boost::any(boost::lexical_cast<string>(id));
+		m_params["did"] = boost::any(boost::lexical_cast<string>(id));
 	}
 public:
 	WDocsWidget(){
@@ -39,11 +39,11 @@ public:
 		}
 		m_box->setModel(_model);
 		m_box->setVerticalSize(_model->rowCount());
-		if(m_params.find("pid")  != m_params.end())	{
+		if(m_params.find("did")  != m_params.end())	{
 			std::vector<int>::iterator it = m_ids.begin();
 			idx = 0;			
 			for(;it != m_ids.end(); ++it, idx++)
-				if(*it == boost::any_cast<int>(m_params["pid"])){
+				if(*it == boost::any_cast<int>(m_params["did"])){
 					m_box->setCurrentIndex(idx);
 					break;
 				}

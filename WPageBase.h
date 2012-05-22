@@ -17,6 +17,9 @@ public:
 	virtual string getNextLink(){
 		return makeparurl(m_params, m_snextbase);
 	}
+	virtual string getNextBase(){
+		return m_snextbase;
+	}
 	virtual void update(){}
 	protected:
 	map<string, boost::any> m_params;

@@ -2,7 +2,7 @@
 <!DOCTYPE boost_serialization>
 <boost_serialization signature="serialization::archive" version="9">
 <doctors class_id="0" tracking_level="0" version="0">
-	<count>6</count>
+	<count>14</count>
 	<item_version>0</item_version>
 	<item class_id="1" tracking_level="0" version="0">
 		<id>1</id>
@@ -39,6 +39,54 @@
 		<name>Krasivaja Tatsiana Mikhailovna</name>
 		<phone>802974362482</phone>
 		<spec>2</spec>
+	</item>
+	<item>
+		<id>7</id>
+		<name>Sergeev Petr Aleksandrovich</name>
+		<phone>802974343482</phone>
+		<spec>3</spec>
+	</item>
+	<item>
+		<id>8</id>
+		<name>Semenova Elena Mikhailovna</name>
+		<phone>802974343482</phone>
+		<spec>4</spec>
+	</item>
+	<item>
+		<id>9</id>
+		<name>Skibarko Igor Valentinovich</name>
+		<phone>802974343482</phone>
+		<spec>4</spec>
+	</item>
+	<item>
+		<id>10</id>
+		<name>Trushin Sergey Viktorovich</name>
+		<phone>802974343482</phone>
+		<spec>4</spec>
+	</item>
+	<item>
+		<id>11</id>
+		<name>Zasenko Irina Sergeevna</name>
+		<phone>802974343482</phone>
+		<spec>4</spec>
+	</item>
+	<item>
+		<id>12</id>
+		<name>Sergeeva Elena Sergeevna</name>
+		<phone>802974343482</phone>
+		<spec>4</spec>
+	</item>
+	<item>
+		<id>13</id>
+		<name>Svetlakov Sergei Batkovich</name>
+		<phone>802974343482</phone>
+		<spec>4</spec>
+	</item>
+	<item>
+		<id>14</id>
+		<name>Galustyan Mikhail Ashotovich</name>
+		<phone>802974343482</phone>
+		<spec>4</spec>
 	</item>
 </doctors>
 </boost_serialization>

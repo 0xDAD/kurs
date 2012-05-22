@@ -302,7 +302,9 @@
     <ClInclude Include="WChoisePage.h" />
     <ClInclude Include="WDocsPage.h" />
     <ClInclude Include="WMainPage.h" />
+    <ClInclude Include="WNewPatientWidget.h" />
     <ClInclude Include="WPageBase.h" />
+    <ClInclude Include="WCardView.h" />
     <ClInclude Include="WSpecsPage.h" />
     <ClInclude Include="WTimeChoise.h" />
   </ItemGroup>

@@ -22,6 +22,7 @@ public:
 		
 	}
 	void onSelChanged(){				
+		
 		m_params["tdate"] = boost::any(boost::lexical_cast<string>(m_cal->selection().begin()->toString()));
 	}
 private:

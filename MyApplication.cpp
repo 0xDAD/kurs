@@ -1,4 +1,6 @@
 #include "MyApplication.h"
+//#include <Wt\WTime>
+//#include <Wt\WDateTime>
 #include <errno.h>
 #include "helper.h"
 
@@ -21,7 +23,32 @@ WApplication *createApplication(const WEnvironment& env)
 void MyApplication::handle( const std::string & str )
 {		
 		int idx = atol(str.c_str() + 1);
-		
+		/*if(idx == 100){
+			list<doctor>::const_iterator it = GetDM().doctors().begin();
+			int cardid = 1;					
+			WDateTime initdt = WDateTime::currentDateTime();
+			initdt.setTime(WTime(8, 0));
+			for(;it != GetDM().doctors().end(); ++it){								
+				WDateTime dt;
+				for (int day = 0; day < 31; day++)
+				{
+					dt = initdt.addDays(day);
+					for(int cards = 0; cards < 20; cards++){						
+						card cr(cardid++, 0, it->id(), dt.toPosixTime(), 15);
+						GetDM().cards().push_back(cr);
+						dt = dt.addSecs(15 * 60);
+					}
+					dt = dt.addSecs(30 * 60);
+					for(int cards = 0; cards < 10; cards++){						
+						card cr(cardid++, 0, it->id(), dt.toPosixTime(), 15);
+						GetDM().cards().push_back(cr);
+						dt = dt.addSecs(15 * 60);
+					}
+				}				
+			}
+			GetDM().save(".");
+			return;
+		}*/
 		if(errno != EINVAL){
 			map<string, boost::any> params;
 			makeparams(str, params);

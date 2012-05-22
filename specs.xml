@@ -2,7 +2,7 @@
 <!DOCTYPE boost_serialization>
 <boost_serialization signature="serialization::archive" version="9">
 <specs class_id="0" tracking_level="0" version="0">
-	<count>2</count>
+	<count>4</count>
 	<item_version>0</item_version>
 	<item class_id="1" tracking_level="0" version="0">
 		<Title>Lor</Title>
@@ -12,8 +12,14 @@
 		<Title>Kardiolog</Title>
 		<SpecID>2</SpecID>
 	</item>
-	
-
+	<item>
+		<Title>UZI Diagnost</Title>
+		<SpecID>3</SpecID>
+	</item>
+	<item>
+		<Title>Terapevt</Title>
+		<SpecID>4</SpecID>
+	</item>
 </specs>
 </boost_serialization>
 

@@ -115,6 +115,51 @@ public:
 		else
 			return false;
 	}
+	bool find_cards_for_doc_date(int doc_id, boost::posix_time::ptime stime, list<card>& cards ){
+		list<card>::iterator i;
+		for(i = m_listCards.begin(); i!=m_listCards.end(); i++){
+			boost::gregorian::date dt = i->get_dt().date();
+			string str = boost::gregorian::to_simple_string(dt);
+			str = boost::gregorian::to_simple_string(stime.date());
+			if(i->get_dt().date() == stime.date() && i->get_did() == doc_id && !i->get_pid())
+				cards.push_back(*i);
+		}
+
+		if(cards.size())
+			return true;
+		else
+			return false;
+	}
+	int get_free_patid(){
+		int max = 0;
+		for (list<patient>::const_iterator it = m_listPatients.begin(); m_listPatients.end()!=it; ++it){
+			if(it->id() > max)
+				max = it->id();
+		}
+		return max + 1;
+	}
+	int get_patient_id(string strid){
+		for (list<patient>::const_iterator it = m_listPatients.begin(); m_listPatients.end() != it; ++it)
+		{
+			if(strid == it->pass())
+			{
+				return it->id();
+			}
+		}
+		return 0;
+	}
+	bool get_patient_cards(int pid, vector<card>& pcards){
+		if(!pid)
+			return false;
+		list<card>::iterator i;
+		for(i = m_listCards.begin(); i!=m_listCards.end(); i++)
+			if(i->get_pid() == pid)
+				pcards.push_back(*i);
+		if(pcards.size())
+			return true;
+		else
+			return false;
+	}
 	bool find_doc_wt (int doc_id, list<card>& free_card)
 	{
 		list<card>::iterator i;
@@ -132,17 +177,17 @@ public:
 	{
 		list<card>::iterator i;
 		for(i = m_listCards.begin(); i!=m_listCards.end(); i++)
-			if(i->get_cid() == card_id && !i->get_pid())
+			if(i->id() == card_id && !i->get_pid())
 				i->set_pid(pat_id);
 	}
 
-	const list<patient>& patients() const{
+	 list<patient>& patients() {
 		return m_listPatients;
 	}
 	const list<doctor>& doctors() const{
 		return m_listDoctors;
 	}
-	const list<card>& cards() const{
+	list<card>& cards() {
 		return m_listCards;
 	}
 	const list<spec>& specs() const{

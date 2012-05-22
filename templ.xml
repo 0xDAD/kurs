@@ -21,6 +21,11 @@
 	</message>
 <message id="link1">Создать талон</message>
 <message id="link2">Изменить талон</message>
+<message id="dlgheader1">Представьтесь</message>
+<message id="dlgpromt1">Введите номер паспорта</message>
+<message id="male">Мужской</message>
+<message id="female">Женский</message>
+
 
 	<message id="page-templ">
 
@@ -44,4 +49,27 @@
 		<div>${cal-ph}</div>
 	</message>
 
+	<message id="choose-time-templ">
+		<p>Выберите удобное время приема:</p>
+		<div>${sel-box}</div>
+	</message>
+	<message id="card-templ">
+		<p>Ваши талоны</p>
+		<div>${cards-lv}</div>
+	</message>
+	<message id="new-patient-templ">
+		<p>Укажите информацию о себе</p>
+		<div>
+			Полное имя:<br/>
+			<div>${name-edit}</div>
+			Пол:<br/>
+			<div>${sex-sel}</div>
+			Номер паспорта:<br/>
+			<div>${pass-edit}</div>
+			Возраст, лет:<br/>
+			<div>${age-edit}</div>
+			Номер телефона:
+			<div>${phone-edit}</div>
+		</div>
+	</message>
 </messages>

@@ -167,3 +167,13 @@ div.footer{
     font-weight: bold;
     background: #AAAAAA;
 } 
+/*
+ * Validators
+ */
+.Wt-invalid {
+    background-color: #f7dada;
+}
+
+.Wt-valid {
+    background-color: #daf7da
+}
