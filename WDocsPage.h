@@ -25,7 +25,7 @@ public:
 	void update(){
 		int idx = 0;
 		int nsid = 0;
-
+		m_ids.clear();
 		if(m_params.find("sid") != m_params.end()){
 			nsid = boost::lexical_cast<int>(boost::any_cast<string>(m_params["sid"]));
 		}
@@ -47,6 +47,12 @@ public:
 					m_box->setCurrentIndex(idx);
 					break;
 				}
+		}else
+			m_box->setCurrentIndex(0);
+	}
+	void onleave(){
+		if(m_box->currentIndex() >= 0){
+			onComboChanged(m_box->currentIndex());
 		}
 	}
 private:

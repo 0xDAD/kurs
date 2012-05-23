@@ -2,7 +2,7 @@
 <!DOCTYPE boost_serialization>
 <boost_serialization signature="serialization::archive" version="9">
 <patients class_id="0" tracking_level="0" version="0">
-	<count>1</count>
+	<count>3</count>
 	<item_version>0</item_version>
 	<item class_id="1" tracking_level="0" version="0">
 		<ID>1</ID>
@@ -11,6 +11,22 @@
 		<Age>100</Age>
 		<Sex>0</Sex>
 		<Phone>8029746436</Phone>
+	</item>
+	<item>
+		<ID>2</ID>
+		<Pass>1212</Pass>
+		<Name>asdd1</Name>
+		<Age>22</Age>
+		<Sex>0</Sex>
+		<Phone>212121212</Phone>
+	</item>
+	<item>
+		<ID>3</ID>
+		<Pass>1315641</Pass>
+		<Name>antony</Name>
+		<Age>19</Age>
+		<Sex>1</Sex>
+		<Phone>12121212</Phone>
 	</item>
 </patients>
 </boost_serialization>

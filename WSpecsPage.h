@@ -26,13 +26,13 @@ public:
 	void update(){
 		int idx = 0;
 		WStringListModel* _model = new WStringListModel();
+		m_ids.clear();
 		for (list<spec>::const_iterator it = GetDM().specs().begin(); it != GetDM().specs().end(); ++it){			
-//			m_box->insertItem(idx, it->title());
 			_model->addString(it->title());
 			m_ids.push_back(it->id());
 			idx++;
 		}
-		m_box->setModel(_model);
+		m_box->setModel(_model);	
 		if(m_params.size() && m_params.find("sid")  != m_params.end()){
 			std::vector<int>::iterator it = m_ids.begin();
 			idx = 0;
@@ -41,6 +41,12 @@ public:
 					m_box->setCurrentIndex(idx);
 					break;
 				}
+		}else
+			m_box->setCurrentIndex(0);
+	}
+	void onleave(){
+		if(m_box->currentIndex() >= 0){
+			onComboChanged(m_box->currentIndex());
 		}
 	}
 private:

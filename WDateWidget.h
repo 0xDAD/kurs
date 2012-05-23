@@ -19,10 +19,12 @@ public:
 		m_snextbase = "/5";
 	}
 	void update(){
-		
+		m_cal->select(WDate::currentDate());
 	}
-	void onSelChanged(){				
-		
+	void onleave(){
+		onSelChanged();
+	}
+	void onSelChanged(){		
 		m_params["tdate"] = boost::any(boost::lexical_cast<string>(m_cal->selection().begin()->toString()));
 	}
 private:

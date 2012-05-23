@@ -7,7 +7,7 @@ class patient
 protected: 
 	patient(){}
 public:
-	patient(int id, std::string& name, int age, int sex, std::string& phone):m_id(id), m_name(name), m_age(age),m_sex(sex), m_phone(phone){
+	patient(int id, std::string name, int age, int sex, std::string phone, std::string pass):m_id(id), m_name(name), m_age(age),m_sex(sex), m_phone(phone), m_pass(pass){
 	}
 	enum sex{
 		Male,

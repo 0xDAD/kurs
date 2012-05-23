@@ -41,16 +41,29 @@ public:
 		m_age = new WLineEdit();		
 		WIntValidator* ival  = new WIntValidator(15, 120, m_age);	
 		m_age->setValidator(ival);
-		templ->bindWidget("age-edit", m_pass);
+		templ->bindWidget("age-edit", m_age);
 
 		m_phone = new WLineEdit();		
 		WRegExpValidator* reval  = new WRegExpValidator("([0-9\(\)\/\+ \-]*)", m_phone);
 		templ->bindWidget("phone-edit", m_phone);
 		
-		m_snextbase = "/7";
+		m_snextbase = "/2";
 	}
 	void update(){
 		
+	}
+	void onleave(){
+		int pid =  boost::lexical_cast<int>(boost::any_cast<string>(m_params["pid"]));
+		if(!pid){
+			m_snextbase = "/0";
+			return;
+		}
+		patient new_pat(pid, m_name->text().toUTF8(), 
+			boost::lexical_cast<int>(m_age->text().toUTF8()),
+			m_box->currentIndex(), m_phone->text().toUTF8(), m_pass->text().toUTF8());
+		int cid = boost::lexical_cast<int>(boost::any_cast<string>(m_params["cid"]));
+		GetDM().patients().push_back(new_pat);
+		GetDM().appointment(cid, pid);		
 	}
 	
 private:

@@ -184,13 +184,13 @@ public:
 	 list<patient>& patients() {
 		return m_listPatients;
 	}
-	const list<doctor>& doctors() const{
+	 list<doctor>& doctors() {
 		return m_listDoctors;
 	}
 	list<card>& cards() {
 		return m_listCards;
 	}
-	const list<spec>& specs() const{
+	 list<spec>& specs() {
 		return m_listSpecs;
 	}
 };

@@ -20,7 +20,7 @@ public:
 		m_box = new Wt::WSelectionBox();
 		m_box->activated().connect(this, &WTimeWidget::onComboChanged);
 		templ->bindWidget("sel-box", m_box);
-		m_snextbase = "/7";
+		m_snextbase = "/2";
 	}
 	void update(){
 		WDateTime tdate;
@@ -32,6 +32,7 @@ public:
 		WStringListModel* _model = new WStringListModel();
 		list<card> cards;
 		int idx = 0;
+		m_ids.clear();
 		GetDM().find_cards_for_doc_date(nDoc, tdate.toPosixTime(), cards); 
 		for (list<card>::const_iterator it = cards.begin(); it != cards.end(); ++it){	
 			WDateTime dt = WDateTime::fromPosixTime(it->get_dt());						
@@ -40,23 +41,16 @@ public:
 			idx++;
 		}
 		m_box->setModel(_model);
+		m_box->setCurrentIndex(0);
 		m_box->setVerticalSize(_model->rowCount());
-		//if(m_params.find("pid")  != m_params.end())	{
-		//	std::vector<int>::iterator it = m_ids.begin();
-		//	idx = 0;			
-		//	for(;it != m_ids.end(); ++it, idx++)
-		//		if(*it == boost::any_cast<int>(m_params["pid"])){
-		//			m_box->setCurrentIndex(idx);
-		//			break;
-		//		}
-		//}
+
 	}
 	void onComboChanged(int nItem){				
 		m_params["cid"] = boost::any(boost::lexical_cast<string>(m_ids[nItem]));
 	}
-	string getNextLink(){
+	void onleave(){
+		onComboChanged(m_box->currentIndex());
 		Wt::WDialog dialog(tr("dlgheader1"));
-
 		new Wt::WText(tr("dlgpromt1"), dialog.contents());
 		Wt::WLineEdit edit(dialog.contents());
 		new Wt::WBreak(dialog.contents());
@@ -71,17 +65,15 @@ public:
 				pid = GetDM().get_free_patid();
 				m_snextbase = "/6";
 			}else
-				{
-					m_snextbase = "/7";
-					int cid = boost::lexical_cast<int>(boost::any_cast<string>(m_params["cid"]));
-					GetDM().appointment(cid, pid);
-				}
-
+			{
+				m_snextbase = "/2";
+				int cid = boost::lexical_cast<int>(boost::any_cast<string>(m_params["cid"]));
+				GetDM().appointment(cid, pid);
+			}
 			m_params["pid"] = boost::any(boost::lexical_cast<string>(pid));
-			return WPageBase::getNextLink();
 		}
-		return m_snextbase;
 	}
+
 private:
 	WSelectionBox* m_box;
 	std::vector<int> m_ids;

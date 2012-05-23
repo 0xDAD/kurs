@@ -48,12 +48,11 @@ public:
 
 		m_stack->addWidget(_choise);
 		m_stack->addWidget(_specs);
-		m_stack->addWidget(_wempt); //CARDS WIDGET
+		m_stack->addWidget(_card); //CARDS WIDGET
 		m_stack->addWidget(_docs);
 		m_stack->addWidget(_wdate);
 		m_stack->addWidget(_wtime);
 		m_stack->addWidget(_newpat);
-		m_stack->addWidget(_card);
 
 		//FOOTER
 		WContainerWidget* footer = new WContainerWidget();
@@ -82,10 +81,11 @@ public:
 	void nextClicked(const WMouseEvent& evt){
 		WPageBase* _widget = static_cast<WPageBase*>(m_stack->currentWidget());
 		if (_widget && !_widget->getNextBase().empty()){			
-			WApplication::instance()->setInternalPath(_widget->getNextLink(), true);			
+			_widget->onleave();
+			WApplication::instance()->setInternalPath(_widget->getNextLink(), true);		
 		}
 	}
-	void updatePage() 
+	void updatePage()
 	{
 		WPageBase* _widget = static_cast<WPageBase*>(m_stack->currentWidget());
 		if (_widget && !_widget->getNextBase().empty()){			
