@@ -68,7 +68,12 @@ public:
 			{
 				m_snextbase = "/2";
 				int cid = boost::lexical_cast<int>(boost::any_cast<string>(m_params["cid"]));
+				try{
 				GetDM().appointment(cid, pid);
+				}
+				catch(WMyException& ex){
+					Wt::log("exception")<<ex.what();
+				}
 			}
 			m_params["pid"] = boost::any(boost::lexical_cast<string>(pid));
 		}

@@ -1,10 +1,11 @@
 #pragma once
+#include "../WKursException.h"
 #include "doctor.h"
 #include "patient.h"
 #include "card.h"
 #include "specialization.h"
 #include <fstream>
-//#include <wfstream>
+
 #include <boost/archive/xml_woarchive.hpp>
 #include <boost/archive/xml_wiarchive.hpp>
 #include <boost/serialization/list.hpp>
@@ -175,6 +176,8 @@ public:
 	}
 	void appointment (int card_id, int pat_id)
 	{
+		if(!card_id && !pat_id)
+			throw new WMyException("Incorrect card or patient ID");
 		list<card>::iterator i;
 		for(i = m_listCards.begin(); i!=m_listCards.end(); i++)
 			if(i->id() == card_id && !i->get_pid())

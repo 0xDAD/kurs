@@ -5,6 +5,7 @@
 #include "helper.h"
 
 
+
 using namespace Wt;
 
 WApplication *createApplication(const WEnvironment& env)
@@ -72,8 +73,11 @@ void MyApplication::handle( const std::string & str )
 
 int main(int argc, char **argv)
 {
- // GetDM().load(".");
-	 GetDM().load(".");
+ try{
+  GetDM().load(".");
+ }
+ catch(WMyException& ex){
+	 cout << "Unable to load environment. Reason: "<< ex.what();
+ }
   return WRun(argc, argv, &createApplication);
- // GetDM().save(".");
 }

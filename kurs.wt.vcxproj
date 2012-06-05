@@ -86,8 +86,8 @@
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" />
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Development\Libraries\boost_1_47_0\stage\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\development\Libraries\wt-3.2.1\build;C:\development\Libraries\wt-3.2.1\src;c:\Development\Libraries\boost_1_47_0;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\development\libs\wt-3.2.1\build\src\http\Debug;C:\Development\Libs\boost\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\development\Libs\wt-3.2.1\build;C:\development\Libs\wt-3.2.1\src;c:\Development\Libs\boost;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
@@ -107,7 +107,7 @@
       <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>C:\development\Libraries\wt-3.2.1\build;C:\development\Libraries\wt-3.2.1\src;c:\Development\Libraries\boost_1_47_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>c:\Development\Libs\wt-3.2.1\build;c:\Development\Libs\wt-3.2.1\src;c:\Development\Libs\boost_1_47_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_WIN32_WINNT=0x0501;WT_WITH_OLD_INTERNALPATH_API;WT_THREADED;_REENTRANT;BOOST_SPIRIT_THREADSAFE;BOOST_THREAD_USE_LIB;_CRT_SECURE_NO_WARNINGS;inline=__inline;_SCL_SECURE_NO_WARNINGS;WT_THREADED;_REENTRANT;BOOST_SPIRIT_THREADSAFE;WT_DEPRECATED_3_0_0;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -130,7 +130,7 @@
     </ProjectReference>
     <Link>
       <AdditionalOptions> /STACK:10000000 /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;c:\Development\Libraries\wt-3.2.1\build\src\http\Debug\wthttpd.lib;c:\Development\Libraries\wt-3.2.1\build\src\Debug\wtd.lib;winmm.lib;ws2_32.lib;mswsock.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;c:\Development\Libs\wt-3.2.1\build\src\http\Debug\wthttpd.lib;c:\Development\Libs\wt-3.2.1\build\src\Debug\wtd.lib;winmm.lib;ws2_32.lib;mswsock.lib</AdditionalDependencies>
       <OutputFile>$(TargetDir)\kurs.wt.exe</OutputFile>
       <Version>0.0</Version>
       <AdditionalLibraryDirectories>C:\development\boost_1_49_0\lib\$(OutDir);C:\development\boost_1_49_0\lib;..\..\src\http\Debug\$(OutDir);..\..\src\http\Debug;..\..\src\Debug\$(OutDir);..\..\src\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -158,7 +158,7 @@
       <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>C:\development\Libraries\wt-3.2.1\build;C:\development\Libraries\wt-3.2.1\src;C:\development\Libraries\boost_1_49_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>c:\Development\Libs\wt-3.2.1\build;c:\Development\Libs\wt-3.2.1\src;c:\Development\Libs\boost_1_49_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0501;WT_WITH_OLD_INTERNALPATH_API;WT_THREADED;_REENTRANT;BOOST_SPIRIT_THREADSAFE;BOOST_THREAD_USE_LIB;_CRT_SECURE_NO_WARNINGS;inline=__inline;_SCL_SECURE_NO_WARNINGS;WT_THREADED;_REENTRANT;BOOST_SPIRIT_THREADSAFE;WT_DEPRECATED_3_0_0;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -206,7 +206,7 @@
       <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MinSpace</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>C:\development\Libraries\wt-3.2.1\build;C:\development\Libraries\wt-3.2.1\src;C:\development\Libraries\boost_1_49_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>c:\Development\Libs\wt-3.2.1\build;c:\Development\Libs\wt-3.2.1\src;c:\Development\Libs\boost_1_49_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0501;WT_WITH_OLD_INTERNALPATH_API;WT_THREADED;_REENTRANT;BOOST_SPIRIT_THREADSAFE;BOOST_THREAD_USE_LIB;_CRT_SECURE_NO_WARNINGS;inline=__inline;_SCL_SECURE_NO_WARNINGS;WT_THREADED;_REENTRANT;BOOST_SPIRIT_THREADSAFE;WT_DEPRECATED_3_0_0;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -254,7 +254,7 @@
       <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>C:\development\Libraries\wt-3.2.1\build;C:\development\Libraries\wt-3.2.1\src;C:\development\Libraries\boost_1_49_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>c:\Development\Libs\wt-3.2.1\build;c:\Development\Libs\wt-3.2.1\src;c:\Development\Libs\boost_1_49_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0501;WT_WITH_OLD_INTERNALPATH_API;WT_THREADED;_REENTRANT;BOOST_SPIRIT_THREADSAFE;BOOST_THREAD_USE_LIB;_CRT_SECURE_NO_WARNINGS;inline=__inline;_SCL_SECURE_NO_WARNINGS;WT_THREADED;_REENTRANT;BOOST_SPIRIT_THREADSAFE;WT_DEPRECATED_3_0_0;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -301,6 +301,7 @@
     <ClInclude Include="WDateWidget.h" />
     <ClInclude Include="WChoisePage.h" />
     <ClInclude Include="WDocsPage.h" />
+    <ClInclude Include="WKursException.h" />
     <ClInclude Include="WMainPage.h" />
     <ClInclude Include="WNewPatientWidget.h" />
     <ClInclude Include="WPageBase.h" />

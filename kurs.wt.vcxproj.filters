@@ -63,6 +63,9 @@
     <ClInclude Include="WCardView.h">
       <Filter>UI</Filter>
     </ClInclude>
+    <ClInclude Include="WKursException.h">
+      <Filter>App</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CMakeLists.txt" />

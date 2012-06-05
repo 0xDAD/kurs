@@ -29,13 +29,13 @@ public:
 		
 			
 		m_name = new WLineEdit();		
-		WLengthValidator* val  = new WLengthValidator(10, 100, m_name);
-		val->setMandatory(true);
+		WLengthValidator* val  = new WLengthValidator(10, 100, m_name);	
+		m_name->setValidator(val);
 		templ->bindWidget("name-edit", m_name);
 
 		m_pass = new WLineEdit();		
 		val  = new WLengthValidator(8, 10, m_pass);
-		val->setMandatory(true);
+		m_pass->setValidator(val);
 		templ->bindWidget("pass-edit", m_pass);
 		
 		m_age = new WLineEdit();		
@@ -45,6 +45,7 @@ public:
 
 		m_phone = new WLineEdit();		
 		WRegExpValidator* reval  = new WRegExpValidator("([0-9\(\)\/\+ \-]*)", m_phone);
+		m_phone->setValidator(reval);
 		templ->bindWidget("phone-edit", m_phone);
 		
 		m_snextbase = "/2";
@@ -58,14 +59,33 @@ public:
 			m_snextbase = "/0";
 			return;
 		}
-		patient new_pat(pid, m_name->text().toUTF8(), 
-			boost::lexical_cast<int>(m_age->text().toUTF8()),
-			m_box->currentIndex(), m_phone->text().toUTF8(), m_pass->text().toUTF8());
-		int cid = boost::lexical_cast<int>(boost::any_cast<string>(m_params["cid"]));
-		GetDM().patients().push_back(new_pat);
-		GetDM().appointment(cid, pid);		
+		
+		try{
+			validate();
+			patient new_pat(pid, m_name->text().toUTF8(), 
+				boost::lexical_cast<int>(m_age->text().toUTF8()),
+				m_box->currentIndex(), m_phone->text().toUTF8(), m_pass->text().toUTF8());
+			int cid = boost::lexical_cast<int>(boost::any_cast<string>(m_params["cid"]));
+			GetDM().patients().push_back(new_pat);
+			GetDM().appointment(cid, pid);		
+		}
+		catch(WMyException& ex)
+		{
+			Wt::log("exception") << "Unable to make appointment because " << ex.what();
+			m_snextbase = "/0";
+			return;
+		}
 	}
-	
+	void validate(){
+		if(m_name->validate() != WValidator::Valid)
+			throw new WMyException("incorrect name entered");
+		if(m_age->validate() != WValidator::Valid)
+			throw new WMyException("incorrect age entered");
+		if(m_pass->validate() != WValidator::Valid)
+			throw new WMyException("incorrect passport number");
+		if(m_phone->validate() != WValidator::Valid)
+			throw new WMyException("incorrect phone entered");
+	}
 private:
 	WComboBox* m_box;
 	WLineEdit* m_name;

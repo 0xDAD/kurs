@@ -32472,7 +32472,7 @@
 	</item>
 	<item>
 		<ID>4639</ID>
-		<Patient>0</Patient>
+		<Patient>1</Patient>
 		<Doctor>5</Doctor>
 		<StartTime>20120621T123000</StartTime>
 		<Duration>15</Duration>
@@ -42692,7 +42692,7 @@
 	</item>
 	<item>
 		<ID>6099</ID>
-		<Patient>0</Patient>
+		<Patient>2</Patient>
 		<Doctor>7</Doctor>
 		<StartTime>20120608T100000</StartTime>
 		<Duration>15</Duration>
@@ -45240,7 +45240,7 @@
 	</item>
 	<item>
 		<ID>6463</ID>
-		<Patient>0</Patient>
+		<Patient>4</Patient>
 		<Doctor>7</Doctor>
 		<StartTime>20120620T110000</StartTime>
 		<Duration>15</Duration>

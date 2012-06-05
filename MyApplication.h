@@ -1,5 +1,6 @@
 #pragma once
 #include <Wt/WApplication>
+#include "WKursException.h"
 #include "business/datamanager.h"
 #include "WMainPage.h"
 
