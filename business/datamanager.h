@@ -177,7 +177,7 @@ public:
 	void appointment (int card_id, int pat_id)
 	{
 		if(!card_id && !pat_id)
-			throw new WMyException("Incorrect card or patient ID");
+			throw WMyException("Incorrect card or patient ID");
 		list<card>::iterator i;
 		for(i = m_listCards.begin(); i!=m_listCards.end(); i++)
 			if(i->id() == card_id && !i->get_pid())
