@@ -50,10 +50,12 @@ public:
 		}else
 			m_box->setCurrentIndex(0);
 	}
-	void onleave(){
+	bool onleave(){
 		if(m_box->currentIndex() >= 0){
 			onComboChanged(m_box->currentIndex());
-		}
+			return true;
+		} else
+			return false;
 	}
 private:
 	WSelectionBox* m_box;

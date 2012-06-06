@@ -53,11 +53,11 @@ public:
 	void update(){
 		
 	}
-	void onleave(){
+	bool onleave(){
 		int pid =  boost::lexical_cast<int>(boost::any_cast<string>(m_params["pid"]));
 		if(!pid){
 			m_snextbase = "/0";
-			return;
+			return false;
 		}
 		
 		try{
@@ -67,24 +67,25 @@ public:
 				m_box->currentIndex(), m_phone->text().toUTF8(), m_pass->text().toUTF8());
 			int cid = boost::lexical_cast<int>(boost::any_cast<string>(m_params["cid"]));
 			GetDM().patients().push_back(new_pat);
-			GetDM().appointment(cid, pid);		
+			GetDM().appointment(cid, pid);	
+			m_snextbase = "/2";
 		}
 		catch(WMyException& ex)
 		{
-			Wt::log("exception") << "Unable to make appointment because " << ex.what();
-			m_snextbase = "/0";
-			return;
+			Wt::log("exception") << "Unable to make appointment because " << ex.what();			
+			return false;
 		}
+		return true;
 	}
 	void validate(){
 		if(m_name->validate() != WValidator::Valid)
-			throw new WMyException("incorrect name entered");
+			throw WMyException("incorrect name entered");
 		if(m_age->validate() != WValidator::Valid)
-			throw new WMyException("incorrect age entered");
+			throw WMyException("incorrect age entered");
 		if(m_pass->validate() != WValidator::Valid)
-			throw new WMyException("incorrect passport number");
+			throw WMyException("incorrect passport number");
 		if(m_phone->validate() != WValidator::Valid)
-			throw new WMyException("incorrect phone entered");
+			throw WMyException("incorrect phone entered");
 	}
 private:
 	WComboBox* m_box;

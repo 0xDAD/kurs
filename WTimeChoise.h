@@ -48,7 +48,7 @@ public:
 	void onComboChanged(int nItem){				
 		m_params["cid"] = boost::any(boost::lexical_cast<string>(m_ids[nItem]));
 	}
-	void onleave(){
+	bool onleave(){
 		onComboChanged(m_box->currentIndex());
 		Wt::WDialog dialog(tr("dlgheader1"));
 		new Wt::WText(tr("dlgpromt1"), dialog.contents());
@@ -73,10 +73,12 @@ public:
 				}
 				catch(WMyException& ex){
 					Wt::log("exception")<<ex.what();
+					return false;
 				}
 			}
 			m_params["pid"] = boost::any(boost::lexical_cast<string>(pid));
 		}
+		return true;
 	}
 
 private:

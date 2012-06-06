@@ -46,9 +46,10 @@ public:
 		m_table->setModel(_model);
 		m_table->resize(200, 300);
 	}
-	void onleave(){
+	bool  onleave(){
 		GetDM().save(".");
 		m_params.clear();
+		return true;
 	}
 
 private:

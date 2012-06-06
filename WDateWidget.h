@@ -21,8 +21,9 @@ public:
 	void update(){
 		m_cal->select(WDate::currentDate());
 	}
-	void onleave(){
+	bool onleave(){
 		onSelChanged();
+		return true;
 	}
 	void onSelChanged(){		
 		m_params["tdate"] = boost::any(boost::lexical_cast<string>(m_cal->selection().begin()->toString()));

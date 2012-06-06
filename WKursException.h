@@ -1,5 +1,10 @@
 #pragma once
+#include "MyApplication.h"
 #include <Wt/WException>
+#include <Wt/WDialog>
+#include <Wt/WText>
+#include <Wt/WPushButton>
+#include <Wt/WBreak>
 
 using namespace Wt;
 
@@ -15,6 +20,14 @@ public:
 
   virtual ~WMyException() throw(){}
   virtual const char *what() const throw(){
+
+	  Wt::WDialog dialog("Exception");
+	  new Wt::WText(what_, dialog.contents());
+	  new Wt::WBreak(dialog.contents());
+	  Wt::WPushButton ok("Ok", dialog.contents());			  
+	  ok.clicked().connect(&dialog, &Wt::WDialog::accept);
+	  dialog.exec();
+
 	  return what_.c_str();
   }
 

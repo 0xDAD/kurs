@@ -81,8 +81,8 @@ public:
 	void nextClicked(const WMouseEvent& evt){
 		WPageBase* _widget = static_cast<WPageBase*>(m_stack->currentWidget());
 		if (_widget && !_widget->getNextBase().empty()){			
-			_widget->onleave();
-			WApplication::instance()->setInternalPath(_widget->getNextLink(), true);		
+			if(_widget->onleave())
+				WApplication::instance()->setInternalPath(_widget->getNextLink(), true);		
 		}
 	}
 	void updatePage()

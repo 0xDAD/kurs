@@ -21,7 +21,7 @@ public:
 		return m_snextbase;
 	}
 	virtual void update(){}
-	virtual void onleave(){}
+	virtual bool onleave(){ return true;}
 	protected:
 	map<string, boost::any> m_params;
 	string m_snextbase;
